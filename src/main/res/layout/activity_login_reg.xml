@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <AutoCompleteTextView
+        android:id="@+id/register_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/account"
+        android:inputType="number"
+        android:drawablePadding="4dp"
+        android:drawableEnd="@drawable/ic_star"
+        android:drawableStart="@drawable/ic_person"
+        android:imeOptions="actionNext"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:drawablePadding="4dp"
+        android:imeOptions="actionNext"
+        android:drawableStart="@drawable/ic_password"
+        android:drawableEnd="@drawable/ic_star"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/register_user" />
+
+    <EditText
+        android:id="@+id/register_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_star"
+        android:imeOptions="actionNext"
+        android:drawablePadding="4dp"
+        android:drawableStart="@drawable/ic_phone"
+        android:hint="@string/phone_num"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_password"
+        tools:ignore="TextFields" />
+
+    <LinearLayout
+        android:id="@+id/register_yzm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/register_phone">
+
+        <EditText
+            android:id="@+id/register_input_yzm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/register_get_yzm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/get_yzm"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/register_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/register_yzm">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/register_boy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/boy" />
+
+        <RadioButton
+            android:id="@+id/register_girl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/girl" />
+    </RadioGroup>
+    <Button
+        android:id="@+id/login_up"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_sex"
+        tools:ignore="ButtonStyle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/login_up"
+        android:text="@string/register_tip"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

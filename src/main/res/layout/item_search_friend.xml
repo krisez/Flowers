@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_margin="4dp"
+    android:gravity="center">
+
+    <cn.krisez.flowers.widget.CircleImageView
+        android:id="@+id/item_search_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/test"/>
+    <TextView
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:id="@+id/item_search_nickname"
+        android:textSize="18sp"
+        tools:text="asdasdasdaasd"/>
+</LinearLayout>
