@@ -49,7 +49,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = getApplicationContext();
-        Bmob.initialize(this,"16b48f60e8fffd7d6f4b94c902e4df3f");
+        Bmob.initialize(this,"key");
 
         sUser = BmobUser.getCurrentUser(User.class);
 
