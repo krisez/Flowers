@@ -92,7 +92,7 @@ public class SosActivity extends BaseActivity implements ISosView {
 
     @Override
     protected String getTitles() {
-        return "我的求助";
+        return "我的咨询";
     }
 
     @Override

@@ -47,6 +47,7 @@ import cn.krisez.flowers.App;
 import cn.krisez.flowers.R;
 import cn.krisez.flowers.entity.User;
 import cn.krisez.flowers.presenter.person_presenter.PersonPresenter;
+import cn.krisez.flowers.ui.ask.MyAskActivity;
 import cn.krisez.flowers.ui.base.ShowFragment;
 import cn.krisez.flowers.ui.login_ui.LoginActivity;
 import cn.krisez.flowers.ui.my_helper.SosActivity;
@@ -132,17 +133,20 @@ public class PersonFrag extends Fragment implements View.OnClickListener, IPerso
         switch (v.getId()) {
             case R.id.set_my_ask:
                 if (isLogin) {
-                    intent = new Intent(getContext(), SosActivity.class);
-                    startActivityForResult(intent, PERSON_AUTHEN);
+                    intent = new Intent(getContext(), MyAskActivity.class);
+                    startActivity(intent);
                 } else Toast.makeText(getContext(), "请登录！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.set_my_post:
-                Toast.makeText(getContext(), "帖子~~暂无", Toast.LENGTH_SHORT).show();
+                if (isLogin) {
+                    intent = new Intent(getContext(), SosActivity.class);
+                    startActivity(intent);
+                } else Toast.makeText(getContext(), "请登录！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.set_mt_collect:
                 if (isLogin) {
                     intent = new Intent(getContext(), LikesActivity.class);
-                    startActivityForResult(intent, PERSON_AUTHEN);
+                    startActivity(intent);
                 } else Toast.makeText(getContext(), "请登录！", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.set_my_shen:
@@ -192,7 +196,7 @@ public class PersonFrag extends Fragment implements View.OnClickListener, IPerso
                     App.setUser(null);
                     shen_name.setText("");
                     BmobIM.getInstance().disConnect();
-                    Tencent tencent = Tencent.createInstance("1105747214",getContext());
+                    Tencent tencent = Tencent.createInstance("1105747214", getContext());
                     tencent.logout(getContext());
                 }
                 break;
@@ -344,7 +348,7 @@ public class PersonFrag extends Fragment implements View.OnClickListener, IPerso
             if (user.getType() == 1)
                 shen_name.setText("学生");
             MainActivity mainActivity = new MainActivity();
-            mainActivity.onActivityResult(0,160,null);
+            mainActivity.onActivityResult(0, 160, null);
         }
     }
 

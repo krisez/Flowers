@@ -1,13 +1,12 @@
 package cn.krisez.flowers.ui.base;
 
-import android.content.Intent;
-import android.view.MenuItem;
 import android.view.View;
 
 import cn.krisez.flowers.R;
 import cn.krisez.flowers.manager.FManager;
 import cn.krisez.flowers.ui.justfrag.AboutAppFrag;
 import cn.krisez.flowers.ui.justfrag.AboutRuleFrag;
+import cn.krisez.flowers.ui.justfrag.AboutSendSFFrag;
 import cn.krisez.flowers.ui.justfrag.AuthenticationFragment;
 import cn.krisez.flowers.ui.justfrag.SettingFrag;
 
@@ -39,6 +38,9 @@ public class ShowFragment extends BaseActivity {
             case "setting":
                 FManager.addFg(getSupportFragmentManager(), new SettingFrag(), R.id.about_frame, "setting");
                 break;
+            case "ask":
+                FManager.addFg(getSupportFragmentManager(), new AboutSendSFFrag(), R.id.about_frame, "ask");
+                break;
         }
     }
 
@@ -54,6 +56,8 @@ public class ShowFragment extends BaseActivity {
                 return "认证";
             case "setting":
                 return "设置";
+            case "ask":
+                return "查询";
         }
         return "";
     }

@@ -11,6 +11,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import cn.krisez.flowers.R;
 import cn.krisez.flowers.entity.Send2S;
 import cn.krisez.flowers.ui.base.BaseActivity;
@@ -157,7 +159,7 @@ public class SendM2SActivity extends BaseActivity {
                 mApply.setCategory(category.getText().toString());
                 mApply.setDailiren(dailiren.getText().toString());
                 mApply.setDlrid(dailirenid.getText().toString());
-                if(rb!=null)
+                if (rb != null)
                     mApply.setDlrtype(rb.getText().toString());
                 else mApply.setDlrtype("null");
                 mApply.setDescribe(describe.getText().toString());
@@ -169,9 +171,15 @@ public class SendM2SActivity extends BaseActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     SharedPreferenceUtil.saveApply(mApply);
-                                    Intent intent = new Intent(SendM2SActivity.this, IDActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    mApply.save(new SaveListener<String>() {
+                                        @Override
+                                        public void done(String s, BmobException e) {
+                                            showError("提交成功！");
+                                            finish();
+                                        }
+                                    });
+                                    /*Intent intent = new Intent(SendM2SActivity.this, IDActivity.class);
+                                    startActivity(intent);*/
                                 }
                             })
                             .setPositiveButton("修改", null)

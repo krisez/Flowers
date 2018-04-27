@@ -2,12 +2,16 @@ package cn.krisez.flowers.entity;
 
 import java.io.Serializable;
 
+import cn.bmob.v3.BmobObject;
+import cn.krisez.flowers.App;
+
 /**
  * Created by Krisez on 2017/7/27.
  *申请页面JavaBean 发送至司法局
  */
 
-public class Send2S implements Serializable {
+public class Send2S extends BmobObject{
+   private User mUser;
    private String room;
    private String name;
    private String idcard;
@@ -22,11 +26,15 @@ public class Send2S implements Serializable {
    private String dlrid;
    private String dlrtype;
    private String describe;
+   private String progress;
 
    public Send2S() {
+      this.mUser = App.getUser();
+      this.progress = "待处理";
    }
 
    public Send2S(String room, String name, String idcard, String sex, String nation, String place, String domicile, String phone, String people, String category, String dailiren, String dlrid, String dlrtype , String describe) {
+      this.progress = "待处理";
       this.room = room;
       this.name = name;
       this.idcard = idcard;
@@ -41,6 +49,22 @@ public class Send2S implements Serializable {
       this.dlrid = dlrid;
       this.dlrtype = dlrtype;
       this.describe = describe;
+   }
+
+   public String getProgress() {
+      return progress;
+   }
+
+   public void setProgress(String progress) {
+      this.progress = progress;
+   }
+
+   public User getUser() {
+      return mUser;
+   }
+
+   public void setUser(User user) {
+      mUser = user;
    }
 
    public String getRoom() {

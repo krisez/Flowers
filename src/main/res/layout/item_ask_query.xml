@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/my_ask_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:lines="2"
+        android:textSize="18sp"
+        tools:text="smsmsmsmsmsmssasasasasasasasasdadadsdadasdsadsadsadsadsadasdsadasdasassasasasasaasassasasm" />
+
+    <TextView
+        android:id="@+id/my_ask_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_ask_content"
+        tools:text="南岸" />
+
+    <TextView
+        android:id="@+id/my_ask_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/my_ask_addr"
+        app:layout_constraintTop_toBottomOf="@+id/my_ask_content"
+        tools:text="12/12 12:12" />
+
+    <TextView
+        android:id="@+id/my_ask_gress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/my_ask_time"
+        app:layout_constraintTop_toBottomOf="@+id/my_ask_content"
+        tools:text="待处理" />
+</android.support.constraint.ConstraintLayout>

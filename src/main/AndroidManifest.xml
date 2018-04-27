@@ -53,6 +53,7 @@
         <activity android:name=".im.ui.ContactActivity" />
         <activity android:name=".ui.ask.SendM2SActivity"/>
         <activity android:name=".ui.base.IDActivity"/>
+        <activity android:name=".ui.ask.MyAskActivity"/>
 
         <!--腾讯API使用-->
         <activity
