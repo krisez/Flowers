@@ -242,8 +242,8 @@ public class DensityUtil {
          final String domain = "dysmsapi.aliyuncs.com";
 
         // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
-        final String accessKeyId = "LTAIFZamSgtPAKSZ";
-        final String accessKeySecret = "sFRbPrel1byBSifhLFDvH8pKNkzidZ";
+        final String accessKeyId = "id";
+        final String accessKeySecret = "secret";
 
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
@@ -260,9 +260,9 @@ public class DensityUtil {
         //必填:待发送手机号
         request.setPhoneNumbers(number);
         //必填:短信签名-可在短信控制台中找到
-        request.setSignName("茶花援助");
+        request.setSignName("name");
         //必填:短信模板-可在短信控制台中找到
-        request.setTemplateCode("SMS_115265017");
+        request.setTemplateCode("code");
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
         request.setTemplateParam("{\"code\":\""+code+"\"}");
 
